@@ -8,56 +8,54 @@ if (!empty($_SESSION)){
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <link rel="icon" href="images/hostel-black.png">
-    <link rel="stylesheet" href="bootstrap/docs/dist/css/bootstrap.min.css">
-    <script src="bootstrap/js/tests/vendor/jquery.min.js"></script>
-    <script src="bootstrap/docs/dist/js/bootstrap.min.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.min.css">
     <title>Accueil - Workshop</title>
 
 </head>
 <body>
+
 <!-- NaveBar -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-dark bg-dark">
     <div class="container">
-        <div class="navbar-header">
-            <a class="logo pull-left" href="index.php"><img src="images/hostel-white.png" width="45" height="45"/></a>
-            <a class="navbar-brand" href="index.php">&nbsp;&nbsp;Workshop</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
+        <a class="navbar-brand" href="#">
+            <img src="bootstrap-4.0.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            Pendu à l'informatique
+        </a>
 
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">Connexion
-                </button>
+            <form class="form-inline">
 
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#register">Inscription
+                <button type="button" class="btn btn-outline-info my-2 my-sm-0" data-toggle="modal" data-target="#login">Connexion
+                </button>&nbsp
+                <button type="button" class="btn btn-outline-info my-2 my-sm-0" data-toggle="modal" data-target="#register">Inscription
                 </button>
 
             </form>
-        </div>
+
     </div>
 </nav>
+
 <!-- Modal inscription-->
 <div id="register" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <form method="post" action="register.php" onsubmit="return identicalPassword(this);" class="form-horizontal">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Inscription</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                     <div class="form-group">
                         <label for="inputNom" class="control-label col-xs-4">Nom d'utlisateur</label>
                         <div class="col-xs-5">
-                            <input type="text" id="inputNom" name="nom" placeholder="Doe" class="form-control" required>
+                            <input type="text" id="inputNom" name="nom" placeholder="xXxDarkSasuke74xXx" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputEmail" class="control-label col-xs-4">Email</label>
                         <div class="col-xs-5">
-                            <input type="text" id="inputEmail" name="email" placeholder="john.doe@gmail.com"
+                            <input type="text" id="inputEmail" name="email" placeholder="darksasuke74@gmail.com"
                                    class="form-control" required>
 
                         </div>
@@ -70,7 +68,7 @@ if (!empty($_SESSION)){
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputRepeatPassword" class="control-label col-xs-4">Confirmation du<br>mot de
+                        <label for="inputRepeatPassword" class="control-label col-xs-4">Confirmation du mot de
                             passe</label>
                         <div class="col-xs-5">
                             <input type="password" id="inputRepeatPassword" name="repeatpassword" placeholder="********"
@@ -89,13 +87,13 @@ if (!empty($_SESSION)){
     </div>
 </div>
 <!-- Modal connexion-->
-<div id="login" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+<div id="login" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form method="post" action="login.php" class="form-horizontal">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Connexion</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                     <div class="form-group">
@@ -123,47 +121,48 @@ if (!empty($_SESSION)){
 
     </div>
 </div>
-<br>
 <!-- Corps de la page -->
-<div class="jumbotron">
+<div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1>Apprendre l'anglais en s'amusant !</h1>
-        <p>Site dédié à l'apprentissage de l'anglais grâce au célèbre jeu du pendu.</p>
+        <h1 class="display-4">Apprendre l'informatique en s'amusant !</h1>
+        <p class="lead">Site dédié à l'apprentissage du vocabulaire informatique grâce au célèbre jeu du pendu.<br>
+        Inscrivez vous dès maintenant pour jouer !</p>
     </div>
 </div>
 
-<img src="images/bonhomme-pendu.jpg" alt="Hôtel Neptune" class="center-block" width="904" height="636"/>
-
+<img src="images/bonhomme-pendu.jpg" alt="Hôtel Neptune" class="rounded-circle mx-auto d-block" width="904" height="636"/>
+<br>
 <div class="container">
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
-            <h2>test</h2>
-            <p>test.</p>
+            <h2>Apprendre l'informatique</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
             <!--<p><a class="btn btn-default" href="#" role="button">Voir Plus De Détails &raquo;</a></p>-->
         </div>
         <div class="col-md-4">
-            <h2>test</h2>
-            <p>test.</p>
+            <h2>S'amuser avec l'informatique</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
             <!--<p><a class="btn btn-default" href="#" role="button">Voir Plus De Détails &raquo;</a></p>-->
         </div>
         <div class="col-md-4">
-            <h2>test</h2>
-            <p>test.</p>
+            <h2>Le populaire jeu du pendu</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
             <!--<p><a class="btn btn-default" href="#" role="button">Voir Plus De Détails &raquo;</a></p>-->
         </div>
     </div>
-    <?php
-    echo '<pre>';
-    print_r($GLOBALS);
-    echo '</pre>';
-    ?>
     <hr>
 
     <footer>
-        <p>&copy; 2018 WorkshopB2-2</p>
+        <p>&copy; 2018 Workshop 2 B2</p>
     </footer>
 </div>
+<!--<script src="bootstrap-4.0.0/js/tests/vendor/jquery-1.9.1.min.js"></script>
+<script src="bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
+<script src="bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+--><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript">
     function identicalPassword(form){
         if(form.password.value != form.repeatpassword.value){

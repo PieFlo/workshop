@@ -12,50 +12,54 @@ if(isset($_SESSION['email'])){
     }
 
 ?>
-<h1>Quiz</h1><br>
-    <div class="panel-group">
-    <div class="panel panel-default">
-        <div class="panel-heading">L'Hôtel</div>
-        <div class="panel-body">
-            <a href="listeClient.php">Jouer</a><br>
-<?php       if ($_SESSION['admin']==true) { ?>
-            <a href="listeClient.php">Liste des clients</a><br>
-<?php       } ?>
-
+<div class="row">
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Panel</h4>
+                <br>
+                <a href="" class="card-link">Jouer</a><br><br>
+            </div>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">Profil</div>
-        <div class="panel-body">
-            <a href="updateClient.php">Modifier ses informations</a><br>
-            <a href="updateClientMdp.php">Modifier son mot de passe</a><br>
-            <a data-toggle="modal" href="#unregister" class="button">Se désinscrire</a>
-            <div class="modal fade" id="unregister" role="dialog">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Déinscription</h4>
-                        </div>
-                        <div class="modal-body">
-<?php       if ($_SESSION['admin']==false) { ?>
-                            <p>Êtes-vous sûr de vouloir vous déinscrire ?</p>
-                        </div>
-<?php       } else { echo "<p>L'administrateur ne peut pas se désinscrire</p>";} ?>
-                        <div class="modal-footer">
-<?php       if ($_SESSION['admin']==false) { ?>
-                            <a href="unregister.php"><button type="button" class="btn btn-danger">Oui</button></a>
-<?php       } ?>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-<?php if ($_SESSION['admin']==false) echo "Non"; else echo "Fermer";?></button>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Profil</h4>
+                <a href="updateClient.php" class="card-link">Modifier ses informations</a><br>
+                <a href="updateClientMdp.php" class="card-link">Modifier son mot de passe</a><br>
+                <?php       if ($_SESSION['admin']==true) { ?>
+                    <a href="listeClient.php" class="card-link">Liste des clients</a><br>
+                <?php       } ?>
+                <a data-toggle="modal" href="#unregister" class="button">Se désinscrire</a>
+                <div class="modal fade" id="unregister" role="dialog">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Déinscription</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                            </div>
+                            <div class="modal-body">
+                                <?php       if ($_SESSION['admin']==false) { ?>
+                                <p>Êtes-vous sûr de vouloir vous déinscrire ?</p>
+                            </div>
+                            <?php       } else { echo "<p>L'administrateur ne peut pas se désinscrire</p>";} ?>
+                            <div class="modal-footer">
+                                <?php       if ($_SESSION['admin']==false) { ?>
+                                    <a href="unregister.php" class="card-link"><button type="button" class="btn btn-danger">Oui</button></a>
+                                <?php       } ?>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    <?php if ($_SESSION['admin']==false) echo "Non"; else echo "Fermer";?></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
-    </div>
+</div>
 <br>
 <br>
 <?php
@@ -63,8 +67,5 @@ if(isset($_SESSION['email'])){
 }else{
 	header('Location:logout.php'); // permet de ne pas pouvoir acceder à la page directement en modifiant l'URL. Il faut obligatoirement s'inscrire.
 }
-//echo '<pre>';
-//print_r($GLOBALS);
-//echo '</pre>';
 include_once('footer.html');
 ?>
