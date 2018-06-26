@@ -127,12 +127,12 @@ if (!empty($_SESSION)){
 <!-- Corps de la page -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Bienvenue à vous !</h1>
-        <p>test.</p>
+        <h1>Apprendre l'anglais en s'amusant !</h1>
+        <p>Site dédié à l'apprentissage de l'anglais grâce au célèbre jeu du pendu.</p>
     </div>
 </div>
 
-<img src="images/neptune_hotel.jpg" alt="Hôtel Neptune" class="img-circle center-block" width="904" height="636"/>
+<img src="images/bonhomme-pendu.jpg" alt="Hôtel Neptune" class="center-block" width="904" height="636"/>
 
 <div class="container">
     <!-- Example row of columns -->
@@ -161,7 +161,7 @@ if (!empty($_SESSION)){
     <hr>
 
     <footer>
-        <p>&copy; 2017 Poujol Pierre-Florent B1 C1</p>
+        <p>&copy; 2018 WorkshopB2-2</p>
     </footer>
 </div>
 <script type="text/javascript">
