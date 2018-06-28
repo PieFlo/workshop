@@ -10,7 +10,7 @@ function main(){
         $mot = str_split($motObj['mot'], 1);
         $definition = $motObj['definition'];
         session_start();
-        $_SESSION = [];
+        //$_SESSION = [];
         $_SESSION['nbrErreur']=0;
         $_SESSION['mot'] = $mot;
         $_SESSION['tentatives'] = [];

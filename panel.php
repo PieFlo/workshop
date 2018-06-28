@@ -10,7 +10,13 @@ if(isset($_SESSION['email'])){
             echo "<div class=\"alert alert-success\">Bienvenue ".$_SESSION['nom']." !</div>";
         }
     }
-
+if(isset ($_SESSION['mot'])){
+    $_SESSION['nbrErreur']=[];
+    $_SESSION['mot'] = [];
+    $_SESSION['tentatives'] = [];
+    $_SESSION['definition'] =[];
+    $_SESSION['trouvee'] =[];
+}
 ?>
 <div class="row">
     <div class="col-md-9">
@@ -67,5 +73,6 @@ if(isset($_SESSION['email'])){
 }else{
 	header('Location:logout.php'); // permet de ne pas pouvoir acceder à la page directement en modifiant l'URL. Il faut obligatoirement s'inscrire.
 }
+displayVar();
 include_once('footer.html');
 ?>

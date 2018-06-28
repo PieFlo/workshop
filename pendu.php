@@ -27,15 +27,15 @@ include_once 'functions.php'; // Permet de se connecter à la base de données.
                 <?php
                 if(getVar('win') || getVar('loose')){
                         if(getVar('win')){
-                            echo '<img src="images/win.png">';
-                        } else {
+                            echo '<img src="images/win.jpg">';
+                        } else if ($_SESSION['nbrErreur']== 10) {
                             echo '<img src="images/lose.jpg">';
                         }
                         ?>
                         <form action="penduController.php?start" method="post">
                             <input type="submit" value="Nouvelle partie"/>
                         </form>
-                    <?php }else{?>
+                <?php }else{?>
                         <form action="penduController.php" method="post">
                     <input type="text" name="lettre" maxlength="1" required/>
                     <input type="submit" name="valider"/>
@@ -95,5 +95,6 @@ include_once 'functions.php'; // Permet de se connecter à la base de données.
 </div>
 
 <?php
+displayVar();
 include_once 'footer.html';
 ?>
