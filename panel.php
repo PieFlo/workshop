@@ -73,6 +73,6 @@ if(isset ($_SESSION['mot'])){
 }else{
 	header('Location:logout.php'); // permet de ne pas pouvoir acceder à la page directement en modifiant l'URL. Il faut obligatoirement s'inscrire.
 }
-displayVar();
+//displayVar();
 include_once('footer.html');
 ?>

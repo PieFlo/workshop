@@ -33,12 +33,14 @@ include_once 'functions.php'; // Permet de se connecter à la base de données.
                         }
                         ?>
                         <form action="penduController.php?start" method="post">
-                            <input type="submit" value="Nouvelle partie"/>
+                            <input type="submit"  class="btn btn-light" value="Nouvelle partie"/>
                         </form>
                 <?php }else{?>
-                        <form action="penduController.php" method="post">
-                    <input type="text" name="lettre" maxlength="1" required/>
-                    <input type="submit" name="valider"/>
+                        <form class="form-inline" action="penduController.php" method="post">
+                            <div class="form-group">
+                    <input type="text" class="form-control" name="lettre" maxlength="1" required/>&nbsp
+                    <input type="submit" class="btn btn-light" name="valider"/>
+                            </div>
                 </form>
                    <?php } ?>
                 <?php
@@ -48,7 +50,10 @@ include_once 'functions.php'; // Permet de se connecter à la base de données.
                         header('Location: penduController.php?start');
                         exit(1);
                     }
-                    echo implode(' ', $trouvee);
+                    if(getVar('loose'))
+                        echo implode(' ', $_SESSION['mot']);
+                    else
+                        echo implode(' ', $trouvee);
                 ?>
             </div>
             <div class="col-md-6">
@@ -95,6 +100,6 @@ include_once 'functions.php'; // Permet de se connecter à la base de données.
 </div>
 
 <?php
-displayVar();
+//displayVar();
 include_once 'footer.html';
 ?>
