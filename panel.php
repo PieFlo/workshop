@@ -18,7 +18,7 @@ if(isset($_SESSION['email'])){
             <div class="card-body">
                 <h4 class="card-title">Panel</h4>
                 <br>
-                <a href="" class="card-link">Jouer</a><br><br>
+                <a href="pendu.php" class="card-link">Jouer</a><br><br>
             </div>
         </div>
     </div>
@@ -36,13 +36,13 @@ if(isset($_SESSION['email'])){
                     <div class="modal-dialog modal-sm">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Déinscription</h4>
+                                <h4 class="modal-title">Désinscription</h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                             </div>
                             <div class="modal-body">
                                 <?php       if ($_SESSION['admin']==false) { ?>
-                                <p>Êtes-vous sûr de vouloir vous déinscrire ?</p>
+                                <p>Êtes-vous sûr de vouloir vous désinscrire ?</p>
                             </div>
                             <?php       } else { echo "<p>L'administrateur ne peut pas se désinscrire</p>";} ?>
                             <div class="modal-footer">

@@ -22,5 +22,37 @@ function displayVar(){
     print_r($GLOBALS);
     echo '</pre>';
 }
+function getVar($name) {
+	if (isset ( $_GET [$name] )) {
+		if (! empty ( $_GET [$name] )) {
+			return $_GET [$name];
+		}
+		return TRUE;
+	}
+	return FALSE;
+}
+
+function postVar($name) {
+	if (isset ( $_POST [$name] )) {
+		if (! empty ( $_POST [$name] )) {
+			return $_POST [$name];
+		}
+		return TRUE;
+	}
+	return FALSE;
+}
+
+function sessionVar($name) {
+	if (session_status() !== PHP_SESSION_ACTIVE) {
+		session_start();
+	}
+	if (isset ( $_SESSION [$name] )) {
+		if (! empty ( $_SESSION [$name] )) {
+			return $_SESSION [$name];
+		}
+		return TRUE;
+	}
+	return FALSE;
+}
 
 ?>
