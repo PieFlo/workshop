@@ -11,6 +11,7 @@ function main(){
         $definition = $motObj['definition'];
         session_start();
         $_SESSION = [];
+        $_SESSION['nbrErreur']=0;
         $_SESSION['mot'] = $mot;
         $_SESSION['tentatives'] = [];
         $_SESSION['definition'] = $definition;
@@ -37,7 +38,7 @@ function main(){
             header('Location: pendu.php');
             exit(1);
         }
-        if(sizeof($tentatives) > 20){
+        if($_SESSION['nbrErreur'] == 10){
             header('Location: pendu.php?loose');
         }else{
             $_SESSION['tentatives'][] = $lettre;
@@ -53,7 +54,7 @@ function main(){
 }
 
 function getRandomMot(){
-    $id = rand(0, 20);
+    $id = rand(1, 21);
     $bdd = getDataBase();
     $mot = $bdd->prepare("SELECT mot, definition FROM definition WHERE id_definition=:id");
     $mot->execute(array('id'=>$id));
@@ -61,11 +62,15 @@ function getRandomMot(){
 }
 
 function checkLetter($mot, $lettre, $trouvee){
+    $found = false;
     for ($i=0; $i < sizeof($mot); $i++) { 
         if($mot[$i] == $lettre){
             $trouvee[$i] = $lettre;
+            $found = true;
         }
     }
+    if($found == false)
+        $_SESSION['nbrErreur']++;
     return $trouvee;
 }
 

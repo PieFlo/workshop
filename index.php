@@ -9,7 +9,7 @@ if (!empty($_SESSION)){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="">
+    <link rel="icon" href="images/icon.png">
     <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.min.css">
     <title>Accueil - Workshop</title>
 
@@ -20,7 +20,7 @@ if (!empty($_SESSION)){
 <nav class="navbar navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="bootstrap-4.0.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="images/icon.png" width="35" height="35" class="d-inline-block align-top" alt="">
             Pendu à l'informatique
         </a>
 
@@ -137,17 +137,17 @@ if (!empty($_SESSION)){
     <div class="row">
         <div class="col-md-4">
             <h2>Apprendre l'informatique</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <p class="lead">Apprendre le vocabulaire de l'informatique et de la programmation à l'aide de notre principe.</p>
             <!--<p><a class="btn btn-default" href="#" role="button">Voir Plus De Détails &raquo;</a></p>-->
         </div>
         <div class="col-md-4">
             <h2>S'amuser avec l'informatique</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <p class="lead">Pour permettre cette apprentissage, venez vous amuser grâce à notre mini-jeu afin de découvrir les mots qui se cache dans celui-ci.</p>
             <!--<p><a class="btn btn-default" href="#" role="button">Voir Plus De Détails &raquo;</a></p>-->
         </div>
         <div class="col-md-4">
             <h2>Le populaire jeu du pendu</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <p class="lead">Pour ce faire nous avons repris le jeu du pendu qui est un bon moyen afin de mémoriser des mots. Qui sont ici accompagner par une définition afin de guider l'utilisateur dans sa recherche.</p>
             <!--<p><a class="btn btn-default" href="#" role="button">Voir Plus De Détails &raquo;</a></p>-->
         </div>
     </div>

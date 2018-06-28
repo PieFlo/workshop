@@ -12,11 +12,7 @@ if($_SESSION['admin']=='1'){
             <tr>
                 <th width="90"></th>
                 <th class="text-center">Numéro</th>
-                <th>Civilité</th>
                 <th>Nom</th>
-                <th width="110">Prénom</th>
-                <th>Adresse</th>
-                <th width="89">Date de naissance</th>
                 <th>Email</th>
             </tr>
         </thead>
@@ -24,16 +20,12 @@ if($_SESSION['admin']=='1'){
         <tr>
             <td>
                 <a class="btn" href="delClient.php?id=<?=$donnees['numeroClient']?>" title="Supprimer le client">
-                    <span class="glyphicon glyphicon-trash text-danger"></span>
+                    <span><img src="images/trash.png" width="12" height="15"/></span>
                 </a>
-                <a href="updateClient.php?id=<?=$donnees['numeroClient']?>"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="updateClient.php?id=<?=$donnees['numeroClient']?>"><span><img src="images/pencil.png" width="15" height="15"/></span></a>
             </td>
             <td class="text-center"><?php echo $donnees['numeroClient'];?></td>
-            <td><?php echo $donnees['civil'];?></td>
             <td><?php echo $donnees['nom'];?></td>
-            <td><?php echo $donnees['prenom'];?></td>
-            <td><?php echo $donnees['adresse'].", ".$donnees['codePostal']." ".$donnees['ville'].", ".$donnees['pays'];?></td>
-            <td class="text-center"><?php echo $donnees['dateNaissance'];?></td>
             <td><?php echo $donnees['email'];?></td>
         </tr>
 <?php   }
