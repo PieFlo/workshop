@@ -38,16 +38,15 @@ function main(){
             header('Location: pendu.php');
             exit(1);
         }
+        $_SESSION['tentatives'][] = $lettre;
+        $_SESSION['trouvee'] = checkLetter($mot, $lettre, $trouvee);
+        if(isMotTrouvee($_SESSION['trouvee'])){
+            header('Location: pendu.php?win'); 
+        }else{
+        header('Location: pendu.php');
+        }
         if($_SESSION['nbrErreur'] == 10){
             header('Location: pendu.php?loose');
-        }else{
-            $_SESSION['tentatives'][] = $lettre;
-            $_SESSION['trouvee'] = checkLetter($mot, $lettre, $trouvee);
-            if(isMotTrouvee($_SESSION['trouvee'])){
-                header('Location: pendu.php?win'); 
-            }else{
-                header('Location: pendu.php');
-            }
         }
         exit(0);
     }
